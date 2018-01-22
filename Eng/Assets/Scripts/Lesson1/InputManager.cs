@@ -12,25 +12,15 @@ public class InputManager : MonoBehaviour
 
 	[SerializeField]
 	GameObject Congratulation;
-
-	[SerializeField]
-	GameObject nextLevel, preLevel;
-
-	[SerializeField]
-	GameObject[] overObject;
+	float timeShowWin;
 
 	void Start(){
-		if(nextLevel != null)
-			nextLevel.SetActive (false);
-		if (preLevel != null)
-			preLevel.SetActive (false);
 		countTileTrue = 0;
 		if (Congratulation != null)
 			Congratulation.SetActive (false);
 	}
 
-    void Update()
-    {
+    void Update() {
 		if (HasInput)
 		{
 			//Debug.Log ("dsada");
@@ -44,17 +34,10 @@ public class InputManager : MonoBehaviour
 
 		//Debug.Log ("countTileTrue: " + countTileTrue + " tiles.Length: " + tiles.Length);
 		if (countTileTrue == tiles.Length) {
-			/*if (Congratulation.fillAmount < 1)
-				Congratulation.fillAmount += 0.05f;
-			else {
-				nextLevel.SetActive (true);
-				if (preLevel != null)
-					preLevel.SetActive (true);
-			}*/
-			Congratulation.SetActive (true);
-			if (overObject.Length > 0)
-				for (int i = 0; i < overObject.Length; i++)
-					overObject [i].SetActive (false);
+			if (timeShowWin < 1f)
+				timeShowWin += Time.deltaTime;
+			else
+				Congratulation.SetActive (true);
 		}
     }
     Vector2 CurrentTouchPosition
@@ -117,12 +100,4 @@ public class InputManager : MonoBehaviour
 			if (tiles [i].isPosTrue)
 				countTileTrue++;
     }
-
-	public void Home(string nameScene){
-		UnityEngine.SceneManagement.SceneManager.LoadScene (nameScene);
-	}
-
-	public void NextLevel(int level){
-		UnityEngine.SceneManagement.SceneManager.LoadScene ("Lesson"+level);
-	}
 }

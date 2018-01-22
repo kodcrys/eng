@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIAnimations : MonoBehaviour {
 
 	[SerializeField]
-	enum UI { none, btnUIGeneral, introLesson, rightWrongSymbol, clampAni, scaleUIAni, rotateUIAni, starWinAni, scaleToMaxCanvasWin }
+	enum UI { none, btnUIGeneral, introLesson, rightWrongSymbol, clampAni, scaleUIAni, rotateUIAni, starWinAni, scaleToMaxCanvasWin, uiButtonCanvasWin }
 
 	[SerializeField]
 	UI uiAnimations = UI.none;
@@ -46,7 +46,9 @@ public class UIAnimations : MonoBehaviour {
 			case UI.scaleToMaxCanvasWin:
 				uiAniClass.ScaleToMax ();
 				break;
-			
+			case UI.uiButtonCanvasWin:
+				uiAniClass.RunAniBtnWinCanvas ();
+				break;
 		}
 	}
 
