@@ -2098,7 +2098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &132366467
 Transform:
   m_ObjectHideFlags: 0
@@ -2658,6 +2658,7 @@ MonoBehaviour:
     canvasOfIntro: {fileID: 0}
     isChangeState: 0
     lstStar: []
+    timeWaitChangeFrame: 0
 --- !u!1 &183268270
 GameObject:
   m_ObjectHideFlags: 0
@@ -6234,6 +6235,7 @@ MonoBehaviour:
     canvasOfIntro: {fileID: 0}
     isChangeState: 0
     lstStar: []
+    timeWaitChangeFrame: 0
 --- !u!114 &481889512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7567,6 +7569,7 @@ MonoBehaviour:
     canvasOfIntro: {fileID: 0}
     isChangeState: 0
     lstStar: []
+    timeWaitChangeFrame: 0
 --- !u!114 &609203804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8915,6 +8918,7 @@ MonoBehaviour:
     canvasOfIntro: {fileID: 0}
     isChangeState: 0
     lstStar: []
+    timeWaitChangeFrame: 0
 --- !u!114 &682944707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12567,6 +12571,7 @@ MonoBehaviour:
     canvasOfIntro: {fileID: 0}
     isChangeState: 0
     lstStar: []
+    timeWaitChangeFrame: 0
 --- !u!1 &924450782
 GameObject:
   m_ObjectHideFlags: 0
@@ -15628,6 +15633,7 @@ MonoBehaviour:
     canvasOfIntro: {fileID: 0}
     isChangeState: 0
     lstStar: []
+    timeWaitChangeFrame: 0
 --- !u!114 &1099975802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21981,6 +21987,7 @@ MonoBehaviour:
     canvasOfIntro: {fileID: 0}
     isChangeState: 0
     lstStar: []
+    timeWaitChangeFrame: 0
 --- !u!114 &1658682367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24356,6 +24363,7 @@ MonoBehaviour:
     canvasOfIntro: {fileID: 0}
     isChangeState: 0
     lstStar: []
+    timeWaitChangeFrame: 0
 --- !u!114 &1884229313
 MonoBehaviour:
   m_ObjectHideFlags: 0
