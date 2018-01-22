@@ -68,6 +68,9 @@ public class UIAni {
 	[SerializeField]
 	float timeWaitChangeFrame;
 
+	[Header("List button ui of canvasWin")]
+	[SerializeField]
+	GameObject[] lstButtonCanvasWin;
 	/*
 	 * thuc hien animation cho cac button nhu home, listen, replay,...
 	 */
@@ -228,6 +231,21 @@ public class UIAni {
 				indexStar = 0;
 				isPlayPre = false;
 				timeWait = 0;
+			}
+		}
+	}
+
+	bool isToMax, isToOrigin;
+	public void RunAniBtnWinCanvas() {
+		if (isToMax == false) {
+			target.transform.localScale = Vector3.MoveTowards (target.transform.localScale, maxScale, speedRun * Time.deltaTime);
+			if (target.transform.localScale == maxScale)
+				isToMax = true;
+		} else if (isToMax) {
+			if (isToOrigin == false) {
+				target.transform.localScale = Vector3.MoveTowards (target.transform.localScale, originScale, speedRun * Time.deltaTime);
+				if (target.transform.localScale == originScale)
+					isToOrigin = true;
 			}
 		}
 	}

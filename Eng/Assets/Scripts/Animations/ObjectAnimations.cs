@@ -16,6 +16,18 @@ public class ObjectAnimations : MonoBehaviour {
 	[SerializeField]
 	ObjectAniClass objectAniClass;
 
+	[SerializeField]
+	AudioSource meowSound;
+
+	[SerializeField]
+	AudioSource soundlesson;
+
+	[SerializeField]
+	GameObject winCanvas;
+
+	[SerializeField]
+	GameObject introCanvas;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (RunAni ());
@@ -27,10 +39,13 @@ public class ObjectAnimations : MonoBehaviour {
 			case ObjectAni.none:
 				break;
 			case ObjectAni.catAni:
+				meowSound.Stop ();
 				objectAniClass.AniChangeFrameSprite1 (sprTarget);
-				yield return new WaitForSeconds (Random.Range(2f, 5f));
+				yield return new WaitForSeconds (Random.Range (3.5f, 7f));
+				if(soundlesson.isPlaying == false && winCanvas.activeSelf == false && introCanvas.active == false)
+					meowSound.Play ();
 				objectAniClass.AniChangeFrameSprite2 (sprTarget);
-				yield return new WaitForSeconds (0.2f);
+				yield return new WaitForSeconds (0.56f);
 				break;
 			case ObjectAni.cloudAniMove:
 				objectAniClass.Move ();

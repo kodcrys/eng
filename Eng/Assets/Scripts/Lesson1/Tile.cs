@@ -18,6 +18,9 @@ public class Tile : MonoBehaviour
 	[SerializeField]
 	private GameObject nameTileObject;
 
+	[SerializeField]
+	ManagerLesson1 managerLesson;
+
     private void Awake()
     {
 		isPosTrue = false;
@@ -94,6 +97,7 @@ public class Tile : MonoBehaviour
 					right.SetActive (true);
 					StartCoroutine (SlotIntoPlace (transform.position, newPosition, rotate, scale));
 					transform.GetComponent<PolygonCollider2D> ().enabled = false;
+					managerLesson.isTrue = true;
 				} else {
 					transform.position = startingPosition;
 					transform.parent = myParent;
