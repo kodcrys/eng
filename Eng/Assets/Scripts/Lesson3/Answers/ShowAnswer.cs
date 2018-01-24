@@ -17,7 +17,7 @@ public class ShowAnswer : MonoBehaviour {
 
 	// imageAnswer is the image is showed on the button, answer is right or wrong of the question.
 	[SerializeField]
-	GameObject imageAnswer, answer;
+	GameObject imageAnswer, answer, next, previous, refresh, info;
 
 	[SerializeField]
 	GameObject[] otherAnswer;
@@ -57,13 +57,17 @@ public class ShowAnswer : MonoBehaviour {
 
 	void ZoomIn (int valueCount, float valueScale)
 	{
-		if (scale <= valueScale)
+		if (scale <= valueScale) 
 		{
 			scale += Time.deltaTime;
 			transform.localScale = new Vector3 (scale, scale, 1f);
-		}
-		else
+		} 
+		else 
+		{
+			scale = valueScale;
+			transform.localScale = new Vector3 (scale, scale, 1f);
 			countScale = valueCount;
+		}
 	}
 
 	void ZoomOut (int valueCount, float valueScale, GameObject obj)
@@ -73,8 +77,12 @@ public class ShowAnswer : MonoBehaviour {
 			scale -= Time.deltaTime;
 			obj.transform.localScale = new Vector3 (scale, scale, 1f);
 		}
-		else
+		else 
+		{
+			scale = valueScale;
+			transform.localScale = new Vector3 (scale, scale, 1f);	
 			countScale = valueCount;
+		}
 	}
 
 	void OnEnable ()
@@ -92,5 +100,13 @@ public class ShowAnswer : MonoBehaviour {
 	{
 		answer.SetActive (true);
 		checkClicked = true;
+		info.SetActive (true);
+		if (listAnswers [Lesson3Manager.currentQuestion] == 0)
+			refresh.SetActive (true);
+		else 
+		{
+			next.SetActive (true);
+			previous.SetActive (true);
+		}
 	}
 }
